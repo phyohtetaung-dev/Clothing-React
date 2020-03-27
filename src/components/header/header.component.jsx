@@ -12,23 +12,17 @@ const Header = ({ currentUser }) => (
             </Link>
         </BrowserRouter>
         <div className="options">
-            <BrowserRouter>
-                <Link className="option" to="/shop">
-                    SHOP
-                </Link>
-            </BrowserRouter>
-            <BrowserRouter>
-                <Link className="option" to="/shop">
-                    CONTACT
-                </Link>
-            </BrowserRouter>
+            <Link className="option" to="/shop">
+                SHOP
+            </Link>
+            <Link className="option" to="/shop">
+                CONTACT
+            </Link>
             {
                 currentUser ?
-                    <div className="option" onClick={auth.signOut()}> SIGN OUT </div>
+                    <div className="option" onClick={() => auth.signOut()}> SIGN OUT </div>
                     :
-                    <BrowserRouter>
-                        <Link className="option" to="/signin"> SIGN IN </Link>
-                    </BrowserRouter>
+                    <Link className="option" to="/signin"> SIGN IN </Link>
             }
         </div>
 
